@@ -12,9 +12,48 @@ body{
     color: #333;/*cor do texto cinza escuro*/
     /*gradiente de fundo: 135deg e a direção, de roxo claro para roxo escuro*/
     background: linear-gradient(135deg,#667eea 0%, #764ba2 100%);
-    padding: 1rem 5%;/*1rem = 16px tamanho padrão da fonte, o 5% da largura do container*/
+    min-height: 100vh;/*vh = viewport height, minimo de 100% da altura da tela*/
+    }
+    header{
+      background-color: rgba(255, 255, 255, 0.95);/*
+      branco com 95% de opacidade(transparência*/
+      padding: 1rem 5%;/*1rem = 16px tamanho padrão da fonte, o 5% da largura do container*/
     display: flex;/*ativa o flexbox para layout flexível*/
       align-items: center;/*alinha os itens ao verticalmente ao centro*/
-      
-
+      justify-content: space-between;/*espaço entre os itens(logo de um lado e o menu do outro)*/
+      flex-wrap: wrap;/*permite quebra de linha em telas pequenas*/
+      gap: 1rem;/*espaçamento entre os itens flexiveis*/
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);/*sombra: eixo x, eixo y e o desfoque da cor, 0.1(alpha)*/
+      position: sticky;/*grudar o cabeçalho ao colar da página*/
+      top: 0;/*distância do topo ao grudar*/
+      z-index: 1000;/*garante que fique acima de outros elementos*/
+    }
+    header img{
+      height: 60px;/*altura fixa em pixel*/
+      width: auto;/*largura automática para manter a proporção de acordo com a altura*/
+      transition: transform 0.3s easy;/*transição suave de 3 segundos para animação*/ 
+    }
+    header img:hover{/*hover = quando passa o mouse faz alguma coisa*/
+      transform: scale(1.05);/*aumentar em 5% a minha imagem*/
+    }
+    /*===NAVEGAÇÃO nav===*/
+    nav{
+      display: flex;
+      gap: 2rem;/*representa 32px de espaçamento entre os links*/
+     flex-wrap: wrap;
+    }
+    nav a{
+      text-decoration: none;/*remover o sublinhado padrão do link*/
+      color: #764ba2;/*cor roxa*/
+      font-weight: 600;/*peso da fone (semi negrito)*/
+      padding: 0.5rem 1rem;/*8px em cima/baixo, 16px nas laterais*/
+     border-radius: 25%; /*bordas arredondadas*/
+     transition: all 0.3s easy;/*transição suave para todas as propriedades*/
+     position: relative;/*necessário para o pseudo elemento ::after*/
+    }
+    nav a:hover{
+      background-color: #764ba2;
+      color: white;
+      transform: translate(-2px);/*move 2px para cima*/
+      box-shadow: 0 5px 15px rgba(118, 75, 162, 0.3);/*sombra roxa suave*/
     }
