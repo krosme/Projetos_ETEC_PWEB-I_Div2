@@ -57,3 +57,40 @@ body{
       transform: translate(-2px);/*move 2px para cima*/
       box-shadow: 0 5px 15px rgba(118, 75, 162, 0.3);/*sombra roxa suave*/
     }
+    nav a::after{/*pseudo elemento para criar a linha animada abaixo dos links*/
+      content: '';/*necessário para criar o elemento*/
+      position: absolute;/*posição em relação ao link*/
+      bottom: 0;/*cola a linha na parte inferior*/
+      left: 50%;/*começa do meio para as laterais*/
+      transform: translateX(-50%);/*centraliza horizontalmente*/
+      width: 0;/*começa como largura 0*/
+      height: 2px;/*altura da linha*/
+     background-color: #764ba2;
+     transition: width 0.3s ease;/*anima apenas a largura*/
+    }
+    nav a:hover::after{
+      width: 80%;/*expande para 80% da largura do link*/
+    }
+    /*CONTEÚDO DO BLOG*/
+    main{
+      max-width: 1200px;/*largura máxima em pixels*/
+      margin: 2rem auto;/*32px em cima/baixo e auto nas laterais*/
+      padding: 2rem;/*espaçamento interno de 32px em todos os lados*/
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;/*bordas arredondadas*/
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);/*sombra mais pronunciada*/
+      backdrop-filter: blur(10px);/*efeito de desfoque no fundo*/
+      animation: slideIn 0.5s ease-out;/**/
+    }
+    /*DEFINIÇÃO DA ANIMAÇÃO===*/
+    @keyframes slideIn{/*aplicando os quadros de animação*/
+      from{/*estadoinicial*/
+        opacity: 0;/*invisível*/
+        transform: translateY(30px);/*30px para baixo*/
+      }
+      to{
+        opacity: 1;/*visível*/
+        transform: translateY(0);/*posição original*/
+      }
+    }
+      
