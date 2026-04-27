@@ -1,4 +1,4 @@
-/*RESET E ESTILOS BASE*/
+  /*RESET E ESTILOS BASE*/
 /*'0' é um seletor universal que aplica estilos a TODOS os elementos da página*/
 *{
     margin: 0;/*remove as margens padrão que os navegadores adicionam*/
@@ -92,5 +92,20 @@ body{
         opacity: 1;/*visível*/
         transform: translateY(0);/*posição original*/
       }
-    }
-      
+ }
+/*garante que nada transborde*/
+img, iframe{
+  max width: 100%;
+  height: auto;
+  border-radius: 10px;
+}      
+/*deixa o vídeo responsivo (mantem a prporção de 16:9*/
+.video-wrapper{
+  position: relative;
+  height: 200px;
+  width: auto;
+}
+iframe{
+  position: absolute;
+  align-items: center;
+}
